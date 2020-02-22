@@ -1,6 +1,9 @@
 /*!
  * Author: James Qiu
  */
+#checker {
+    display:none;
+}
 .team-photo{
     width: 160px;
     height: 160px;
