@@ -1,3 +1,4 @@
+var REQUEST = location.href;
 function message(type,message,timeval,redirect) {
     if(type == 1) {
         var myclass = 'alert alert-success';
