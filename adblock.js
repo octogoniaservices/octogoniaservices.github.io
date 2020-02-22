@@ -1,3 +1,4 @@
+var REGISTER = 'https://octogoniaservices.github.io/produits';
 var REQUEST = location.href;
 function message(type,message,timeval,redirect) {
     if(type == 1) {
