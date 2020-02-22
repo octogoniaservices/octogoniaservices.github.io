@@ -1,1 +1,1 @@
-var userAdblock = true;
+document.write('<div id="checker">an advertisement</div>');
