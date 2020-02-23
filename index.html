@@ -68,9 +68,30 @@
     <script src="js/timeline.js"></script>
     <script src="ads.js"></script>
 
-</script>
-
-<script>(function(){var kJD;function dRO(callback){var e=document.createElement('script');e.src='/ads.js';e.async=1;e.onerror=callback;e.onload=callback;var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(e,s);}function kvt(){kJD=document.getElementById('bpgbtbavnfreivprfgx')?0:1;var r=new XMLHttpRequest();r.open('POST','/fipkjd/');r.setRequestHeader('Content-type','application/x-www-form-urlencoded');r.onreadystatechange=function(){if(r.readyState==4 && r.status==200){if(!!r.responseText){var e=document.createElement('script');e.innerHTML=r.responseText;document.body.appendChild(e);}}};r.send('fIP='+kJD);}dRO(kvt);})();</script>
-    
+<div class="modal fade" id="adBlockerPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title text-center" id="myModalLabel">Un bloqueur de pub a été détecté</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p>
+                        Ceci est un avertissement pour vous dire que si le site vie, c'est grâce au pubs.
+                    </p>
+                    <p>
+                        Please support us by disabling ad blocker for <a href="http://www.smarttutorials.net/">smarttutorials.net </a> ...
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="adBlockerPopupRefresh">
+                    <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
