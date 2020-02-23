@@ -61,127 +61,18 @@
       </div>
     </header>
 
-
+<div id="wrapfabtest">
+    <div class="adBanner">
+    </div>
+</div>
+	  
     <script src="vendor/jquery/jquery-3.2.1.slim.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/bootstrap.min.js"></script>
     <script src="js/animate.js"></script>
     <script src="js/timeline.js"></script>
     <script src="adblock.js"></script>
-
-<img src="/ads/" width="0" height="0" border="0" alt="adblocktest" id="adblocktest" onload="this.imgloaded=true;" onerror="this.imgloaded=true;" />
-
-<script type="text/javascript">
-
-	adblockblock = function() {
-		if (window.addEventListener) {
-			window.addEventListener('load', this.bind(this.initialize), false);
-		} else if (window.attachEvent) {
-			window.attachEvent('onload', this.bind(this.initialize));
-		}
-	};
 	
-	adblockblock.prototype = {
-	
-		initialize: function() {
-			this.interval = setInterval(this.bind(this.test), 1000);
-			this.test();
-		},
-	
-		test: function() {
-	
-			var element=document.getElementById('adblocktest');
-		
-			/* On test si l'element a été supprimé par le bloqueur
-			* Maxthon?, Konqueror
-			*/
-			if(!element)
-			{
-				this.logger('Element image non trouvé');
-				return this.block();
-			}
-	
-			/* On test si l'image n'a tout pas été chargée dutout
-			* Adblock, /etc/hosts, proxies, etc
-			* Gecko: element.complete==true, même si image non trouvée / mauvaise image et onerror||onload appellée
-			* IE: element.complete==false quand image non trouvée.
-			*/
-			if (element.complete && !element.imgloaded)
-			{
-				this.logger('Image non chargée');
-				return this.block();
-			}
-		
-			/* On test si l'element a été caché par le bloqueur 
-			* (display:none, ou visibility:hidden, ou position:absolute et top/left hors de la page)
-			* Old adblock
-			*/
-			var display = this.getStyle(element, 'display');
-			var visibility = this.getStyle(element, 'visibility');
-			var position = this.getStyle(element, 'position');
-			if (display != 'inline' || (visibility != 'visible' && visibility != 'inherit') || position != 'static')
-			{
-				this.logger('Image cachée: display='+display+' visibility='+visibility+' position='+position);
-				return this.block();
-			}
-	
-			/* On test si l'image a été remplacée
-			* Pour une image non chargée, naturalWidth/Height doit être indéfini ou 0
-			*/
-			if ((element.naturalWidth && element.naturalWidth > 0) || (element.naturalHeight && element.naturalHeight > 0)) {
-				this.logger('Image remplacée');
-				return this.block();
-			}
-			/* Pour Konqueror
-			*/
-			if (element.width && element.width == 64) {
-				this.logger('Image remplacée (Konqueror)');
-				return this.block();
-			}
-		},
-	
-		getStyle: function(element, key) {
-			if (document.defaultView && document.defaultView.getComputedStyle) {
-				return document.defaultView.getComputedStyle(element, '').getPropertyValue(key);
-			} else {
-				return element.currentStyle[key];
-			}
-		},
-	
-		block: function(blockMethod) {
-			// Ne pas supprimer cette ligne
-			if (this.interval) clearInterval(this.interval);
-	
-			// Mettez ce que vous voulez ici
-			alert('Adblock activé ! ');
-		},
-	
-		bind: function(func) {
-			var obj = this;
-			return function() {
-				return func.apply(obj, []);
-			};
-		},
-	
-		logger: function(str) {
-			if (typeof console == 'undefined') return;
-			if (typeof console.log == 'undefined') return;
-			console.log(str);
-		}
-	};
-	
-	/*Décommenter pour débugger (ou utiliser firebug)
-	if (typeof console == 'undefined') {
-		console={};
-		console.log = function(str) {
-			var el = document.createElement('div');
-			el.appendChild(document.createTextNode(str));
-			document.body.appendChild(el);
-		};
-	}
-	*/
-	
-
 </script>
     
 </body>
