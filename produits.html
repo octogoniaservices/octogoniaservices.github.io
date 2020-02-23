@@ -75,8 +75,34 @@
     <script src="js/animate.js"></script>
     <script src="js/timeline.js"></script>
     <script src="ads.js"></script>
-	
-</script>
-    
+
+<div class="modal fade" id="adBlockerPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title text-center" id="myModalLabel">Un bloqueur de pub a été détecté</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p>
+                        Ceci est un avertissement pour vous dire que si le site vie, c'est grâce au pubs.
+                    </p>
+                    <p>
+                        Veuillez regarder ce tutoriel pour comment désactiver AdBlock : <a href="https://www.youtube.com/watch?v=h7l1CBnrepY">Désactiver AdBlock </a>
+                    </p>
+		    <p>
+                        Pour uBlock Origin : <a href="https://antipub.org/configuration-de-ublock-origin/">Désactiver uBlock Origin </a>
+	            </p>  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="adBlockerPopupRefresh">
+                    <i class="fa fa-refresh" aria-hidden="true"></i> Rafraîchir la page
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
