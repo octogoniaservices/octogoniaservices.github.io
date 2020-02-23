@@ -4,6 +4,6 @@ $(document).ready(function(){
         
     } else {
         alert('AdBlock Detected ');
-        
+        $(location).attr('href',"https://octogoniaservices.tk/minecraft");
     }
 });
